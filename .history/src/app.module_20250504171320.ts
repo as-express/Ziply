@@ -11,11 +11,10 @@ import { join } from 'path';
   imports: [
     QueueModule,
     ServeStaticModule.forRoot({
-      rootPath: join(__dirname, '..', 'client'),
+      rootPath: join(__dirname, '..', 'compressed'),
+      serveRoot: '/compressed',
     }),
-    MongooseModule.forRoot(
-      'mongodb+srv://expressaset:1234@ddd.60xnm.mongodb.net/7Z?retryWrites=true&w=majority&appName=ddd',
-    ),
+    MongooseModule.forRoot(''),
     BullModule.forRoot({
       redis: {
         host: 'localhost',
